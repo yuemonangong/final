@@ -1,0 +1,96 @@
+$def with (results,keyword,form)
+
+<html>
+<head>
+<style type="text/css">
+body {
+background-image:url(static/3.jpg);
+}
+div.header
+{
+width:100%;
+margin:0px;
+border:1px solid black;
+line-height:150%;
+}
+
+h1.header
+{
+text-align:center;
+font-style:italic;
+font-weight:bold;
+color:#ffb90f;
+font-size:45px;
+}
+
+div.content
+{
+width:100%;
+margin:0px;
+border:1px solid black;
+line-height:150%;
+}
+
+
+div.header
+{
+width:100%;
+margin:0px;
+}
+
+h1.header
+{
+text-align:center;
+}
+
+div.img
+{
+width:30%;
+border:1px solid black;
+background-color:gray;
+line-height:150%;
+}
+.bg{
+width:100%;
+height:100%;
+position:absolute;
+left:0px;
+top:0px;
+z-index:-1;
+}
+img.img
+{
+width:100%;
+}
+
+a.title
+{
+font-size:30px;
+font-style:italic;
+color:#ff0000
+}
+</style>
+</head>
+
+<body>
+<a href='/'>Sentence Search</a><a>&nbsp&nbspImage Search</a>
+<form action="/i" method="GET">
+    $:form.render()
+</form>
+<img class="bg" src="http://s8.sinaimg.cn/mw690/0068uedjzy7hdJUnwPld7&690"></img>
+<div class="header">
+<h1 class="header">Search Result for #the picture#</h1>
+</div>
+<p></p>
+
+<div class="content">
+$for result in results:
+	<div class="img">
+	<a class="title" href=$result['url']>$result['name']</a>
+	<img class="img" src=$result['imgurl']></img>
+	</div>			
+	<p></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+$def with(form)
+<html>
+<head>
+
+
+<style type="text/css">
+body {
+background-image:url(2.jpeg);
+text-align:center;
+}
+.title {
+font-style:oblique;
+font-weight:bold;
+font-size:80px;
+color:#9932cc;
+margin:auto;
+}
+.subtitle {
+font-family:Edwardian Script ITC;
+font-style:italic;
+font-weight:bold;
+font-size:40px;
+color:#ff0000;
+position:absolute;
+left:1000px;
+top:80px;
+}
+.p1 {
+position:absolute;
+left:640px;
+top:180px;
+font-size:35px;
+color:#ccff00;
+}
+.p2 {
+position:absolute;
+left:980px;
+top:180px;
+font-size:35px;
+color:#0000ff;
+}
+.div1{
+height: 41px;
+background: #f5696c;
+width: 200px;
+position:relative;
+}
+.div2{
+text-align:center;
+padding-top:12px;
+font-size:15px;
+font-weight:800
+}
+
+</style>
+</head>
+
+<body>
+<h1 class="title">The Movie Wonderland</h1>
+<p class="subtitle">~~~to find out what you want</p>
+
+<a class="p1" >Sentence Search</a>
+<a class="p2" href='/im'>Image Search</a>
+
+<form action="/s" method="GET">
+    $:form.render()
+</form>
+</body>
+</html>
+
+

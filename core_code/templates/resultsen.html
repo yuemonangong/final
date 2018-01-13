@@ -1,0 +1,76 @@
+$def with (results,keyword,form)
+
+<html>
+<head>
+<style type="text/css">
+body {
+background-image:url(static/5.jpg);
+}
+div.header
+{
+width:100%;
+margin:0px;
+border:1px solid black;
+line-height:150%;
+}
+
+h1.header
+{
+text-align:center;
+font-style:italic;
+font-weight:bold;
+color:#ddff00;
+font-size:45px;
+}
+
+div.content
+{
+width:100%;
+margin:0px;
+border:1px solid black;
+line-height:150%;
+}
+.bg{
+width:100%;
+height:100%;
+position:absolute;
+left:0px;
+top:0px;
+z-index:-1;
+}
+p.url
+{
+color:green
+}
+
+a.title
+{
+font-size:30px;
+font-style:italic;
+color:#ff0000
+}
+</style>
+</head>
+
+<body>
+<a>Sentence Search&nbsp&nbsp</a><a href='/im'>Image Search</a>
+<form action="/s" method="GET">
+    $:form.render()
+</form>
+<img class="bg" src="http://s15.sinaimg.cn/mw690/0068uedjzy7hdJUrSEK7e&690"></img>
+<div class="header">
+<h1 class="header">Search Result for &quot$keyword&quot</h1>
+</div>
+<p></p>
+$for result in results:
+	<div class="content">
+	<a class="title" href=$result['url']>$result['title']</a>
+	<p>$result['sentence']</p>
+	<p class="url">$result['url']</p>
+	</div>
+	<p></p>
+
+
+</body>
+
+</html>
